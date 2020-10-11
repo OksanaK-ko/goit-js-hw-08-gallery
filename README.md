@@ -1,1 +1,1 @@
-# goit-js-hw-08-gallery
+# GoIT JavaScript Course Homework
