@@ -54,6 +54,10 @@ function onCloseLightboxOverlayClick(evt) {
     }
     ligthBox.classList.remove('is-open');
     lightboxOriginalImg.src = '';
+    const lightBoxOverlay = evt.target;
+    const parentLightboxOverlay = lightBoxOverlay.closest('.lightbox');
+    parentLightboxOverlay.classList.remove('is-open');
+    lightboxOriginalImg.src = '';
 }
 
 
