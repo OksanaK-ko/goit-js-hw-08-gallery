@@ -6,7 +6,7 @@ const ImageCardsmarkup = createImageCardsmarkup(images)
 galleryContainer.insertAdjacentHTML('beforeend', ImageCardsmarkup);
 
 galleryContainer.addEventListener('click', onGalleryContainerClick);
-const ligthBox = document.querySelector('.js-lightbox');
+const lightBox = document.querySelector('.js-lightbox');
 const lightboxOriginalImg = document.querySelector('.lightbox__image');
 
 function createImageCardsmarkup(images) {
@@ -33,16 +33,15 @@ function onGalleryContainerClick(evt) {
     if (evt.target.nodeName !== "IMG") {
         return;
     }
-    ligthBox.classList.add("is-open");
-    const linkOriginalImg = evt.target.dataset.source;
-    lightboxOriginalImg.src = linkOriginalImg;
+    lightBox.classList.add("is-open");
+    lightboxOriginalImg.src = evt.target.dataset.source;
     
 }
 
 const closeButton = document.querySelector('.lightbox__button');
 closeButton.addEventListener('click', onCloseButtonClick);
 function onCloseButtonClick(evt) {
-    ligthBox.classList.remove('is-open');
+    lightBox.classList.remove('is-open');
     lightboxOriginalImg.src = '';
 }
 
@@ -52,7 +51,7 @@ function onCloseLightboxOverlayClick(evt) {
     if (!evt.target.classList.contains('lightbox__overlay')) {
         return;
     }
-    ligthBox.classList.remove('is-open');
+    lightBox.classList.remove('is-open');
     lightboxOriginalImg.src = '';
     const lightBoxOverlay = evt.target;
     const parentLightboxOverlay = lightBoxOverlay.closest('.lightbox');
@@ -60,6 +59,7 @@ function onCloseLightboxOverlayClick(evt) {
     lightboxOriginalImg.src = '';
 }
 
+closeLightboxOverlay.addEventListener()
 
 
 
